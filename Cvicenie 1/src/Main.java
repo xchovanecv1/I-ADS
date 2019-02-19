@@ -30,63 +30,52 @@ public class Main {
         String strLine;
 
 //Read File Line By Line
+        vals.add(0);
         while ((strLine = br.readLine()) != null)   {
             // Print the content on the console
             vals.add(Integer.parseInt(strLine));
             //System.out.println (vals.get(vals.size()-1));
         }
-        Double allpokuta = 0.0;
-        Integer elOff = 0;
-        Integer okolie = 500;
-        Integer base = 0;
-        Integer at = 0;
-        Integer srchend = at+okolie;
-        List<Integer> stops = new ArrayList<>();
-        while(true) {
-            List<Integer> day = segregateDays(at, srchend, base);
-            List<Double> pkt = pokutaList(day);
 
-            //Double min = cutRod(pkt, day.size());
+        //int penalties[] = {0, (int)Math.pow(200 - hotelList[1], 2), -1, -1, -1};
+        //int path[] = {0, 0, -1, -1, -1};
+        List<Integer> penalties = new ArrayList<>();
+        List<Integer> path = new ArrayList<>();
 
-            int minn = findMinIndex(pkt);
-/*
-            for (int g = 0; g < pkt.size(); g++) {
-                System.out.println("i: " + g + ": " + pkt.get(g));
-            }
-*/
-            if(vals.size() < elOff+minn) {
-                break;
-            }
-                at = vals.get(elOff+minn);
-                srchend = at + okolie;
-                base = vals.get(elOff+minn);
-                System.out.println("Allpkt: "+ allpokuta);
-                allpokuta += pkt.get(minn);
-                stops.add(elOff+minn);
-                System.out.println("Vys " + minn + " " + pkt.get(minn) + " Sleep at: " + vals.get(elOff+minn)+" At: "+at);
-                elOff += pkt.size();
+        for(int i =0; i < vals.size(); i++) {
+            penalties.add(-1);
+        }
+        penalties.set(0, 0);
+        penalties.set(1, (int)Math.pow(400 - vals.get(1), 2));
 
-  /*          } catch (IndexOutOfBoundsException e) {
-                i = 800001;
-
-            }*/
+        for(int i =0; i < vals.size(); i++) {
+            path.add(-1);
         }
 
+        path.set(0,0);
+        path.set(1,0);
 
-        for (int g = 0; g < stops.size(); g++) {
-            if(g > 0) {
-                System.out.println("Travel dist: "+ (vals.get(stops.get(g)) - vals.get(stops.get(g-1))));
+        for (int i = 2; i <= vals.size() - 1; i++) {
+            for(int j = 0; j < i; j++){
+                int tempPen = (int)(penalties.get(j) + Math.pow(400 - (vals.get(i) - vals.get(j)), 2));
+                if(penalties.get(i) == -1 || tempPen < penalties.get(i)){
+                    penalties.set(i, tempPen);
+                    path.set(i,j);
+                }
             }
-            System.out.println("Stop at: " + g + ": " + vals.get(stops.get(g)));
         }
-        System.out.println("Allpkt: "+ allpokuta);
+        for (int i = 1; i < vals.size(); i++) {
+            System.out.print("Hotel: " + vals.get(i) + ", penalty: " + penalties.get(i) + ", path: ");
+            printPath(path, i);
+            System.out.println();
+        }
 
-/*
-        int arr[] = new int[] {1, 5, 8, 9, 10, 17, 17, 20};
-        int size = arr.length;
-        System.out.println("Maximum Obtainable Value is "+
-                cutRod(arr, size));
-*/
+    }
+
+    public static void printPath(List<Integer> path, int i) {
+        if (i == 0) return;
+        printPath(path, path.get(i));
+        System.out.print(i + " ");
     }
 
     public static List<Double> pokutaList(List<Integer> days) {
