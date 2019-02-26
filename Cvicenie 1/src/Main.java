@@ -22,31 +22,26 @@ public class Main {
         return max_val;
     }
 
-    /* Driver program to test above functions */
     public static void main(String args[]) throws IOException {
         FileInputStream fstream = new FileInputStream("I-ADS.txt");
         BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 
         String strLine;
 
-//Read File Line By Line
         vals.add(0);
         while ((strLine = br.readLine()) != null)   {
             // Print the content on the console
             vals.add(Integer.parseInt(strLine));
             //System.out.println (vals.get(vals.size()-1));
         }
-
-        //int penalties[] = {0, (int)Math.pow(200 - hotelList[1], 2), -1, -1, -1};
-        //int path[] = {0, 0, -1, -1, -1};
-        List<Integer> penalties = new ArrayList<>();
+        List<Integer> penalta = new ArrayList<>();
         List<Integer> path = new ArrayList<>();
 
         for(int i =0; i < vals.size(); i++) {
-            penalties.add(-1);
+            penalta.add(-1);
         }
-        penalties.set(0, 0);
-        penalties.set(1, (int)Math.pow(400 - vals.get(1), 2));
+        penalta.set(0, 0);
+        penalta.set(1, (int)Math.round(pokuta(vals.get(1))));
 
         for(int i =0; i < vals.size(); i++) {
             path.add(-1);
@@ -57,25 +52,21 @@ public class Main {
 
         for (int i = 2; i <= vals.size() - 1; i++) {
             for(int j = 0; j < i; j++){
-                int tempPen = (int)(penalties.get(j) + Math.pow(400 - (vals.get(i) - vals.get(j)), 2));
-                if(penalties.get(i) == -1 || tempPen < penalties.get(i)){
-                    penalties.set(i, tempPen);
+                int pen = (int)(penalta.get(j) + pokuta((vals.get(i) - vals.get(j))));
+                if(penalta.get(i) == -1 || pen < penalta.get(i)){
+                    penalta.set(i, pen);
                     path.set(i,j);
                 }
             }
         }
-        for (int i = 1; i < vals.size(); i++) {
-            System.out.print("Hotel: " + vals.get(i) + ", penalty: " + penalties.get(i) + ", path: ");
-            printPath(path, i);
-            System.out.println();
-        }
-
+        kdeJeCesta(path, vals.size()-1);
+        System.out.println("Penalta: " + penalta.get(vals.size()-1));
     }
 
-    public static void printPath(List<Integer> path, int i) {
+    public static void kdeJeCesta(List<Integer> path, int i) {
         if (i == 0) return;
-        printPath(path, path.get(i));
-        System.out.print(i + " ");
+        kdeJeCesta(path, path.get(i));
+        System.out.println(vals.get(i) + " ");
     }
 
     public static List<Double> pokutaList(List<Integer> days) {
