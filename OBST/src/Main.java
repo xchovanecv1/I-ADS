@@ -11,76 +11,35 @@ public class Main {
         int parent = root[lowerKey][higherKey];
 
         Tree buff = new Tree(srch_keys.get(parent));
-        // Construct the root of optimal BST
-        if(higherKey == numberOfKeys && lowerKey == 1){
-            //System.out.println("K"+parent+" is the root.");
-        }
         // Construct left sub-tree
         if(lowerKey<=parent-1){
-            //System.out.println("K"+root[lowerKey][parent-1]+" is the left child of K"+parent );
             buff.setLeft(ConstructOptimalBST(root, lowerKey, parent-1, numberOfKeys));
         }else{
-            //System.out.println("D"+ (parent-1) +" is the left child of K"+parent );
             buff.setLeft(null);
         }
         // Construct right sub-tree
         if(higherKey >=parent+1){
-            //System.out.println("K"+root[parent+1][higherKey]+" is the right child of K"+parent );
             buff.setRight(ConstructOptimalBST(root, parent+1, higherKey, numberOfKeys));
         }else{
             buff.setRight(null);
-           // System.out.println("D"+ parent +" is the right child of K"+parent );
         }
         return buff;
     }
-/*
-    public static int pocet_porovnani(String word ,int[][] root, int lowerKey,int higherKey,int numberOfKeys){
-        int parent = root[lowerKey][higherKey];
 
-        // Construct the root of optimal BST
-        if(higherKey == numberOfKeys && lowerKey == 1){
-            System.out.println("K"+parent+" is the root.");
-        }
-        // Construct left sub-tree
-        if(lowerKey<=parent-1){
-            System.out.println("K"+root[lowerKey][parent-1]+" is the left child of K"+parent );
-            ConstructOptimalBST(root, lowerKey, parent-1, numberOfKeys);
-        }else{
-            System.out.println("D"+ (parent-1) +" is the left child of K"+parent );
-        }
-        // Construct right sub-tree
-        if(higherKey >=parent+1){
-            System.out.println("K"+root[parent+1][higherKey]+" is the right child of K"+parent );
-            ConstructOptimalBST(root, parent+1, higherKey, numberOfKeys);
-        }else{
-            System.out.println("D"+ parent +" is the right child of K"+parent );
-        }
-    }
-*/
-    public static int[][] dp_bottomUp_OptimalBST_optimized(double[] p,double q[],int numberOfKeys,double[][] cost){
-        int n = numberOfKeys;
+    public static int[][] obst(double[] p,double q[],int n,double[][] cost){
         double[][] w = new double[n+1+1][n+1];
         int[][] root = new int[n+1+1][n+1];
 
         for(int i=0;i<=n;i++){
             cost[i+1][i] = q[i];
-        }
-        for(int i=0;i<=n;i++){
             w[i+1][i] = q[i];
-        }
-        for(int i=1;i<=n+1;i++){
-            root[i][i-1] = i-1;
         }
         for(int k=1;k<=n;k++){
             for(int i=1;i<=n-k+1;i++){
                 int j = i+k-1;
                 cost[i][j] = Integer.MAX_VALUE;
                 w[i][j] = w[i][j-1] + p[j] + q[j];
-                // get the number of root between root[i][j-1] and root[i+1][j]
-                for(int r=root[i][j-1];r<=root[i+1][j];r++){
-                    if(k == 1){
-                        r = r+1;
-                    }
+                for(int r=i;r<=j;r++){
                     double t = cost[i][r-1] + cost[r+1][j] + w[i][j];
                     if(t < cost[i][j]){
                         cost[i][j] = t;
@@ -130,7 +89,7 @@ public class Main {
                 srch_keys.add(key);
                 q_c_buff = 0;
             }
-            System.out.println(key + ": " + value);
+            //System.out.println(key + ": " + value);
             // do something
         }
 
@@ -150,19 +109,19 @@ public class Main {
                 p[i] = ((double)p_c.get(i) / freq_count);
                 q[i] = ((double)q_c.get(i) / freq_count);
             }
-            System.out.println(p[i] + " " + q[i]);
+            //System.out.println(p[i] + " " + q[i]);
         }
 
-        System.out.println(p_c.size());
-        System.out.println(q_c.size());
+       // System.out.println(p_c.size());
+        //System.out.println(q_c.size());
 
         int numberOfKeys = p_c.size() - 1;
 
         double[][] cost_op = new double[numberOfKeys+1+1][numberOfKeys+1];
 
-        int[][] root_op = dp_bottomUp_OptimalBST_optimized(p, q, numberOfKeys,cost_op);
+        int[][] root_op = obst(p, q, numberOfKeys,cost_op);
 
-        System.out.println("A search cost of this optimal BST is " + (double)cost_op[1][numberOfKeys] * 100 + "\n");
+        System.out.println("A search cost of this optimal BST is " + (double)cost_op[1][numberOfKeys] + "\n");
 
 
         Tree strom = ConstructOptimalBST(root_op, 1, numberOfKeys, numberOfKeys);
@@ -174,6 +133,5 @@ public class Main {
             writer.write(key+": "+strom.pocet_porovnani(key)+"\n");
         }
         writer.close();
-
     }
 }
