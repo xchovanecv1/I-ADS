@@ -3,6 +3,8 @@ import java.util.*;
 
 public class Main {
 
+    // SRC https://github.com/CarterZhou/algorithms_practice/blob/master/dp/OptimalBST.java
+
     public static TreeMap<String, Integer> dic = new TreeMap<>();
     public static List<String> srch_keys = new ArrayList<>();
     public static Tree tree;
@@ -109,11 +111,7 @@ public class Main {
                 p[i] = ((double)p_c.get(i) / freq_count);
                 q[i] = ((double)q_c.get(i) / freq_count);
             }
-            //System.out.println(p[i] + " " + q[i]);
         }
-
-       // System.out.println(p_c.size());
-        //System.out.println(q_c.size());
 
         int numberOfKeys = p_c.size() - 1;
 
@@ -121,7 +119,7 @@ public class Main {
 
         int[][] root_op = obst(p, q, numberOfKeys,cost_op);
 
-        System.out.println("A search cost of this optimal BST is " + (double)cost_op[1][numberOfKeys] + "\n");
+        System.out.println("Cena: " + (double)cost_op[1][numberOfKeys] + "\n");
 
 
         Tree strom = ConstructOptimalBST(root_op, 1, numberOfKeys, numberOfKeys);
