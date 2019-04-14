@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/GIT/ADS/SAT/main.cpp
+iostream
+-
+vector
+-
+stack
+-
+algorithm
+-
+fstream
+-
+string
+-
+

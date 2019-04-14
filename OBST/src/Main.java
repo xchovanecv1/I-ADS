@@ -21,30 +21,37 @@ public class Main {
         }
         // Construct right sub-tree
         if(higherKey >=parent+1){
-            buff.setRight(ConstructOptimalBST(root, parent+1, higherKey, numberOfKeys));
+            buff.setRight(ConstructOptimalBST(root,     parent+1, higherKey, numberOfKeys));
         }else{
             buff.setRight(null);
         }
         return buff;
     }
 
-    public static int[][] obst(double[] p,double q[],int n,double[][] cost){
+    public static int[][] obst(double[] p,double q[],int n,double[][] e){
         double[][] w = new double[n+1+1][n+1];
         int[][] root = new int[n+1+1][n+1];
 
         for(int i=0;i<=n;i++){
-            cost[i+1][i] = q[i];
-            w[i+1][i] = q[i];
+            // Inicializacia hodnot
+            // jedna sa o pripady kedy nemame ziadne kluce ki a existuju len dummy hodnoty di s pravdepodobnostou qi
+            e[i+1][i] = q[i]; // cost
+            w[i+1][i] = q[i]; // suma pravdepodobnosti, ale v prvom pripade bez klucov mame len pravdepodobnost neusmesneho hladania
         }
         for(int k=1;k<=n;k++){
             for(int i=1;i<=n-k+1;i++){
                 int j = i+k-1;
-                cost[i][j] = Integer.MAX_VALUE;
-                w[i][j] = w[i][j-1] + p[j] + q[j];
+                e[i][j] = Integer.MAX_VALUE; //e //ocakavana cena tohto podstromu
+                w[i][j] = w[i][j-1] + p[j] + q[j]; // pravdepodobnost predosleho + aktualne
+                // Prechadzame vsetky moznosti ako koren stromu a hladame tu s minimalnou cenou
                 for(int r=i;r<=j;r++){
-                    double t = cost[i][r-1] + cost[r+1][j] + w[i][j];
-                    if(t < cost[i][j]){
-                        cost[i][j] = t;
+                    // skusime vsetky klue ako koren medzi i <= r <= j
+                    // vypocitame cenu podstromu pri zbolenom roote r
+                    // cena sa sklada z ceny laveho / praveho podstromu a hodnoty aktualneho kluca
+                    double t = e[i][r-1] + e[r+1][j] + w[i][j];
+                    if(t < e[i][j]){
+                        // Minimalnu cenu ulozime a zapamatame si kto bol koren pre tento optimalnz podstrom
+                        e[i][j] = t;
                         root[i][j] = r;
                     }
                 }

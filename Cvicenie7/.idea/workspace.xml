@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4d19eb6-393f-487d-9668-143babc99bd0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OBST/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OBST/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="5cba2b7f-ab0a-43dc-9649-43d63b3fd26a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Tree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Knapac2D/predmety.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Knapac2D/src/CustomComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Knapac2D/src/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Knapac2D/src/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OBST/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OBST/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OBST/out/production/OBST/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../OBST/out/production/OBST/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OBST/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../OBST/src/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="44" column="37" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="37" />
+            <state relative-caret-position="244">
+              <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -28,10 +33,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/outSearch.txt">
+        <entry file="file://$PROJECT_DIR$/I-ADS.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515185">
-              <caret line="30305" column="4" selection-start-line="30305" selection-end-line="30305" selection-end-column="4" />
+            <state relative-caret-position="-74504">
+              <caret line="43655" column="6" selection-start-line="43655" selection-start-column="6" selection-end-line="43655" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -39,23 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Tree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="35" column="23" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
-              <folding>
-                <element signature="e#129#130#0" expanded="true" />
-                <element signature="e#159#160#0" expanded="true" />
-                <element signature="e#350#351#0" expanded="true" />
-                <element signature="e#397#398#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dictionary.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1360">
-              <caret line="80" column="10" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="10" />
+            <state relative-caret-position="442">
+              <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -71,9 +61,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>syste</find>
-      <find>a</find>
-      <find>even</find>
+      <find>BinaryTree</find>
+      <find>631103</find>
+      <find>isValidBST</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -83,14 +73,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Tree.java" />
-        <option value="$PROJECT_DIR$/outSearch.txt" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/I-ADS.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
+    <option name="x" value="-350" />
+    <option name="y" value="-30" />
     <option name="width" value="1940" />
     <option name="height" value="1050" />
   </component>
@@ -100,31 +90,30 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="OBST" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OBST" type="462c0819:PsiDirectoryNode" />
+              <item name="Cvicenie7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cvicenie7" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="OBST" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OBST" type="462c0819:PsiDirectoryNode" />
+              <item name="Cvicenie7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cvicenie7" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552163427436" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../AFJ/Zadanie2" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553552177732" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -140,9 +129,8 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="OBST" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="MAIN_CLASS_NAME" value="BinarySearchTree" />
+      <module name="Cvicenie7" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -160,32 +148,28 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d4d19eb6-393f-487d-9668-143babc99bd0" name="Default Changelist" comment="" />
-      <created>1551986674241</created>
+      <changelist id="5cba2b7f-ab0a-43dc-9649-43d63b3fd26a" name="Default Changelist" comment="" />
+      <created>1553545854950</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1551986674241</updated>
-      <workItem from="1551986677801" duration="8698000" />
-      <workItem from="1552023716576" duration="1197000" />
-      <workItem from="1552154307550" duration="5174000" />
-      <workItem from="1552232361230" duration="464000" />
-      <workItem from="1552342710460" duration="703000" />
-      <workItem from="1552428076510" duration="4878000" />
-      <workItem from="1552460835186" duration="1987000" />
-      <workItem from="1553035095136" duration="1208000" />
-      <workItem from="1553065514900" duration="1540000" />
-      <workItem from="1553204586894" duration="13000" />
+      <updated>1553545854950</updated>
+      <workItem from="1553545858916" duration="6378000" />
+      <workItem from="1553554070397" duration="684000" />
+      <workItem from="1553591747689" duration="3329000" />
+      <workItem from="1553607233189" duration="3036000" />
+      <workItem from="1553632423551" duration="17000" />
+      <workItem from="1553670437008" duration="2530000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25862000" />
+    <option name="totallyTimeSpent" value="15974000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22751679" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2671141" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -194,8 +178,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.42917848" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -204,7 +188,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32827735" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -217,40 +201,27 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Tree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/I-ADS.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-74504">
+          <caret line="43655" column="6" selection-start-line="43655" selection-start-column="6" selection-end-line="43655" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="44" column="37" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="37" />
+        <state relative-caret-position="244">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outSearch.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515185">
-          <caret line="30305" column="4" selection-start-line="30305" selection-end-line="30305" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="35" column="23" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
-          <folding>
-            <element signature="e#129#130#0" expanded="true" />
-            <element signature="e#159#160#0" expanded="true" />
-            <element signature="e#350#351#0" expanded="true" />
-            <element signature="e#397#398#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dictionary.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="80" column="10" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="10" />
         </state>
       </provider>
     </entry>
