@@ -175,34 +175,6 @@ size_t split(const std::string &txt, std::vector<std::string> &strs, char ch)
 //  Driver function to test above functions
 int main(int argc, char *argv[])
 {
-    // n is the number of variables
-    // 2n is the total number of nodes
-    // m is the number of clauses
-
-    // each clause is of the form a or b
-    // for m clauses, we have a[m], b[m]
-    // representing a[i] or b[i]
-
-    // Note:
-    // 1 <= x <= N for an uncomplemented variable x
-    // -N <= x <= -1 for a complemented variable x
-    // -x is the complement of a variable x
-
-    // The CNF being handled is:
-    // '+' implies 'OR' and '*' implies 'AND'
-    // (x1+x2)*(x2’+x3)*(x1’+x2’)*(x3+x4)*(x3’+x5)*
-    // (x4’+x5’)*(x3’+x4)
-    /*
-    int n = 2, m = 3;
-    int a[] = {1, -1, 1};
-    int b[] = {2, -2, 1};
-    */
-    /*
-    int n = 2, m = 3;
-    int a[] = {1, 2, -1};
-    int b[] = {2, -1, -2};
-    */
-
     int n = 0, m = 0;
     int *a, *b;
 
@@ -235,13 +207,6 @@ int main(int argc, char *argv[])
         ln++;
     }
 
-    //int n = 5, m = 7;
-    //int a[] = {1, -2, -1,3,-3, -4, -3};
-    //int b[] = {2, 3, -2, 4, 5, -5, 4};
-
-
-    // We have considered the same example for which
-    // Implication Graph was made
     bool res = is2Satisfiable(n, m, a, b);
 
     if(!res) {
@@ -250,7 +215,7 @@ int main(int argc, char *argv[])
     }
     cout << "SPLNITELNA" << endl;
 
-    vector<vector<int>> scc_g(n+1, vector<int>(0));
+    vector<vector<int>> scc_g(counter+1, vector<int>(0));
 
     for(int i=1; i <=n*2; i++) {
         int var_n = i;
